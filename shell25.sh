@@ -8,6 +8,10 @@ while [ $linea -le $maxlineas ]; do
 sistemas=$(cat listado.txt | head -${linea} | tail -1 | awk '{print$2}') 
 procesos=$(cat listado.txt | head -${linea} | tail -1 | awk '{print$3}') 
 
+#propuesta recoger datos profesor
+#linea=`cat listado.txt | head -${contador} | tail -1`
+#sistemas=`echo $linea | awk '{print $2}'`
+#procesos=`echo $linea | awk '{print $3}'`
 
 if [ $sistemas = "Windows" ]; then
  windows=$(($windows + 1));
@@ -16,7 +20,6 @@ if [ $sistemas = "Windows" ]; then
 else 
  linux=$(($linux + 1));
  prolin=$(($prolin + $procesos));
-
 fi
 
 linea=$(($linea + 1));
