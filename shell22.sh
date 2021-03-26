@@ -1,5 +1,5 @@
 suma=0
-media=0
+
 contador=0
 
 for i in $(cat precipitaciones.txt | awk '{print $2}'); do
@@ -10,5 +10,8 @@ for i in $(cat precipitaciones.txt | awk '{print $2}'); do
 done
 media=$(echo "scale=2; $suma/$contador" | bc -l)
 echo "La media de precipitaciones es" $media
+
+
+#corregido
 
 
